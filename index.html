@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Muhammad Ajmal — IT Support &amp; Operations Engineer</title>
-<meta name="description" content="Portfolio of Muhammad Ajmal, IT Support & Operations Engineer based in Dubai, UAE — CV, projects, and photos.">
+<meta name="description" content="Portfolio of Muhammad Ajmal, IT Support & Operations Engineer based in Dubai, UAE — CV and projects.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,15 +12,16 @@
 
 <style>
   :root{
-    --bg: #10151A;
-    --panel: #161C22;
-    --panel-2: #131810;
-    --line: #2B333A;
-    --text: #ECE8DE;
-    --muted: #8B949B;
-    --accent: #E8A33D;
-    --accent-dim: #4A3D24;
-    --max: 860px;
+    --bg: #EEF2F6;
+    --panel: #FFFFFF;
+    --panel-2: #E4EBF2;
+    --line: #D2DBE4;
+    --text: #1B2733;
+    --muted: #5B6B7A;
+    --accent: #1F5C9E;
+    --accent-2: #0E7C86;
+    --accent-soft: #DCE9F6;
+    --max: 880px;
   }
 
   *{ box-sizing: border-box; }
@@ -59,7 +60,7 @@
     border-bottom: 1px solid var(--line);
     position: sticky;
     top: 0;
-    background: rgba(16,21,26,0.9);
+    background: rgba(238,242,246,0.92);
     backdrop-filter: blur(6px);
     z-index: 10;
   }
@@ -85,79 +86,94 @@
     border-bottom: 1px solid transparent;
     padding-bottom: 2px;
   }
-  nav a:hover{ color: var(--text); border-bottom-color: var(--line); }
+  nav a:hover{ color: var(--accent); border-bottom-color: var(--accent); }
 
   /* ---------- Hero ---------- */
   .hero{
-    padding: 72px 0 56px;
+    position: relative;
+    padding: 0 0 0;
     border-bottom: 1px solid var(--line);
-  }
-  .hero-grid{
-    display: grid;
-    grid-template-columns: auto 1.4fr 1fr;
-    gap: 32px;
-    align-items: start;
-  }
-  .hero-photo{
-    width: 128px;
-    height: 128px;
-    border: 1px solid var(--line);
+    background: linear-gradient(180deg, #10233B 0%, #163457 62%, #1F5C9E 100%);
+    color: #EEF2F6;
     overflow: hidden;
-    flex-shrink: 0;
-    border-radius: 4px;
   }
-  .hero-photo img{
+  .hero-banner{
+    position: relative;
     width: 100%;
-    height: 100%;
+    display: block;
+  }
+  .hero-banner svg{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .hero-content{
+    position: relative;
+    padding: 40px 0 28px;
+  }
+  .hero-wrap{
+    display: grid;
+    grid-template-columns: 1.3fr 260px;
+    gap: 32px;
+    align-items: end;
+  }
+  .hero-text{ padding-bottom: 40px; }
+  .hero-photo-full{
+    align-self: end;
+    border: 1px solid rgba(255,255,255,0.22);
+    border-top: 3px solid #4FD1C5;
+    background: rgba(255,255,255,0.04);
+    padding: 6px 6px 0;
+    max-width: 260px;
+    margin-left: auto;
+  }
+  .hero-photo-full img{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
     object-fit: cover;
     object-position: top center;
-    display: block;
-    filter: grayscale(20%);
   }
   .hero h1{
     font-family: 'Archivo', sans-serif;
     font-weight: 800;
-    font-size: clamp(32px, 5vw, 46px);
+    font-size: clamp(30px, 4.6vw, 44px);
     line-height: 1.1;
     margin: 0 0 10px;
     letter-spacing: -0.01em;
+    color: #FFFFFF;
   }
   .hero .role{
-    font-size: 18px;
-    color: var(--muted);
-    margin: 0 0 22px;
+    font-size: 17px;
+    color: #BFD4EA;
+    margin: 0 0 18px;
   }
   .hero p.lede{
-    max-width: 60ch;
-    font-size: 16px;
-    color: var(--text);
-    opacity: 0.92;
+    max-width: 58ch;
+    font-size: 15.5px;
+    color: #D8E4F0;
   }
   .status-panel{
-    border: 1px solid var(--line);
-    background: var(--panel);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.18);
     padding: 18px 20px;
-    animation: rise 0.5s ease-out;
-  }
-  @keyframes rise{
-    from{ opacity: 0; transform: translateY(6px); }
-    to{ opacity: 1; transform: translateY(0); }
   }
   .status-row{
     display: flex;
     justify-content: space-between;
     font-size: 13px;
     padding: 7px 0;
-    border-bottom: 1px dashed var(--line);
-    color: var(--muted);
+    border-bottom: 1px dashed rgba(255,255,255,0.18);
+    color: #A9C0D6;
   }
   .status-row:last-child{ border-bottom: none; }
-  .status-row span.v{ color: var(--text); text-align: right; }
+  .status-row span.v{ color: #F2F6FA; text-align: right; }
   .status-dot{
     display:inline-block;
     width:7px; height:7px;
     border-radius:50%;
-    background: var(--accent);
+    background: #4FD1C5;
     margin-right: 7px;
     animation: pulse 2.4s ease-in-out infinite;
   }
@@ -168,7 +184,7 @@
 
   /* ---------- Sections ---------- */
   section{
-    padding: 56px 0;
+    padding: 52px 0;
     border-bottom: 1px solid var(--line);
   }
   section:last-of-type{ border-bottom: none; }
@@ -177,16 +193,84 @@
     font-weight: 700;
     font-size: 22px;
     margin: 0 0 24px;
+    color: var(--text);
   }
-  h2 .mono{
+  h2 .eyebrow{
     color: var(--accent);
-    font-size: 14px;
+    font-size: 13px;
     display: block;
     margin-bottom: 6px;
-    font-weight: 400;
+    font-weight: 500;
   }
 
-  .about p{ max-width: 68ch; color: var(--text); opacity: 0.92; }
+  .about p{ max-width: 68ch; color: var(--text); opacity: 0.85; }
+  .skills{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .skills span{
+    font-size: 13px;
+    color: var(--accent-2);
+    background: var(--accent-soft);
+    border: 1px solid var(--line);
+    padding: 5px 11px;
+  }
+
+  /* ---------- Certifications ---------- */
+  .cert-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .cert-grid li{
+    list-style: none;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 12px 14px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+  }
+  .cert-grid li .status{
+    font-size: 11px;
+    color: var(--accent-2);
+    background: var(--accent-soft);
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+  .cert-grid li .status.pending{ color: var(--muted); background: var(--panel-2); }
+  .subhead{
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0 0 12px;
+    color: var(--muted);
+  }
+  @media (max-width: 560px){
+    .cert-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Education ---------- */
+  .edu-panel{
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 20px 22px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+  }
+  .edu-panel strong{
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .edu-panel .edu-meta{ font-size: 14px; color: var(--muted); }
+  .edu-panel .edu-years{ font-size: 14px; color: var(--accent); white-space: nowrap; }
+  .languages{ margin: 16px 0 0; font-size: 14px; color: var(--muted); }
+  .languages span{ color: var(--text); font-weight: 500; }
 
   /* ---------- CV ---------- */
   .cv-panel{
@@ -204,7 +288,7 @@
   .btn{
     display: inline-block;
     background: var(--accent);
-    color: #17130A;
+    color: #FFFFFF;
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
@@ -212,7 +296,7 @@
     border: none;
     cursor: pointer;
   }
-  .btn:hover{ opacity: 0.88; }
+  .btn:hover{ background: #184a80; }
   .cv-embed{
     margin-top: 20px;
     border: 1px solid var(--line);
@@ -224,6 +308,7 @@
   /* ---------- Projects ---------- */
   .work-order{
     border: 1px solid var(--line);
+    background: var(--panel);
     padding: 22px;
     margin-bottom: 16px;
   }
@@ -246,53 +331,17 @@
   .work-order p{
     margin: 10px 0 14px;
     color: var(--text);
-    opacity: 0.9;
+    opacity: 0.82;
     max-width: 64ch;
     font-size: 15px;
   }
   .tags{ display: flex; flex-wrap: wrap; gap: 8px; }
   .tags span{
     font-size: 12px;
-    color: var(--muted);
+    color: var(--accent-2);
+    background: var(--accent-soft);
     border: 1px solid var(--line);
     padding: 3px 9px;
-  }
-
-  /* ---------- Photos ---------- */
-  .contact-sheet{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-  .frame{
-    border: 1px solid var(--line);
-    aspect-ratio: 4/5;
-    overflow: hidden;
-    position: relative;
-    background: var(--panel);
-  }
-  .frame img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .frame .cap{
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    font-size: 11px;
-    color: var(--muted);
-    background: rgba(16,21,26,0.75);
-    padding: 5px 8px;
-  }
-  .frame.empty{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color: var(--muted);
-    font-size: 12px;
-    text-align: center;
-    padding: 10px;
   }
 
   /* ---------- Contact ---------- */
@@ -316,9 +365,9 @@
   }
 
   @media (max-width: 720px){
-    .hero-grid{ grid-template-columns: 1fr; }
-    .hero-photo{ width: 96px; height: 96px; }
-    .contact-sheet{ grid-template-columns: repeat(2, 1fr); }
+    .hero-wrap{ grid-template-columns: 1fr; }
+    .hero-photo-full{ margin: 0 0 20px; max-width: 220px; }
+    .hero-text{ padding-bottom: 24px; }
     nav{ gap: 14px; }
   }
 </style>
@@ -332,45 +381,89 @@
       <a href="#about">About</a>
       <a href="#cv">CV</a>
       <a href="#projects">Projects</a>
-      <a href="#photos">Photos</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<div class="wrap">
-
-  <section class="hero" id="top">
-    <div class="hero-grid">
-      <div class="hero-photo">
-        <img src="assets/headshot.jpg" alt="Portrait of Muhammad Ajmal">
-      </div>
-      <div>
+<div class="hero" id="top">
+  <div class="hero-banner">
+    <!-- IT + aviation motif: circuit traces resolving into an aircraft silhouette on a radar sweep -->
+    <svg viewBox="0 0 1200 220" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Circuit board pattern merging into an aircraft silhouette over a radar sweep">
+      <defs>
+        <radialGradient id="radar" cx="82%" cy="30%" r="60%">
+          <stop offset="0%" stop-color="#4FD1C5" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#4FD1C5" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1200" height="220" fill="url(#radar)"/>
+      <g stroke="#5A8FC2" stroke-width="1.4" fill="none" opacity="0.55">
+        <path d="M0 40 H160 V70 H320 V30 H480"/>
+        <path d="M0 110 H120 V150 H260 V120 H420 V160 H600"/>
+        <path d="M0 190 H90 V170 H230"/>
+        <path d="M1200 40 H1040 V80 H900 V50 H760"/>
+        <path d="M1200 120 H1080 V90 H960 V130 H820"/>
+        <path d="M1200 190 H1110 V210 H980"/>
+      </g>
+      <g fill="#5A8FC2" opacity="0.7">
+        <circle cx="160" cy="40" r="3"/><circle cx="320" cy="70" r="3"/><circle cx="480" cy="30" r="3"/>
+        <circle cx="120" cy="110" r="3"/><circle cx="260" cy="150" r="3"/><circle cx="420" cy="120" r="3"/><circle cx="600" cy="160" r="3"/>
+        <circle cx="1040" cy="40" r="3"/><circle cx="900" cy="80" r="3"/><circle cx="760" cy="50" r="3"/>
+        <circle cx="1080" cy="120" r="3"/><circle cx="960" cy="90" r="3"/><circle cx="820" cy="130" r="3"/>
+      </g>
+      <g transform="translate(600,120)" fill="#EEF2F6" opacity="0.92">
+        <path d="M-2 -60 L4 -60 L10 -8 L92 26 L92 40 L10 20 L6 62 L26 78 L26 88 L2 82 L-2 82 L-26 88 L-26 78 L-6 62 L-10 20 L-92 40 L-92 26 L-10 -8 Z"/>
+      </g>
+      <g stroke="#4FD1C5" stroke-width="1" fill="none" opacity="0.5">
+        <circle cx="960" cy="70" r="26"/>
+        <circle cx="960" cy="70" r="48"/>
+        <circle cx="960" cy="70" r="70"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="wrap hero-wrap">
+      <div class="hero-text">
         <h1>Muhammad Ajmal</h1>
         <p class="role">IT Support &amp; Operations Engineer — Dubai, UAE</p>
-        <p class="lede">Seven years keeping IT systems and shop-floor operations running in an aviation maintenance environment — and building small internal tools on the side to make that work easier to track.</p>
+        <p class="lede">6+ years delivering Level 1/2 IT support, infrastructure management, and business application administration in fast-paced aviation and enterprise environments — holding 90%+ SLA compliance and cutting downtime by 30% along the way.</p>
+        <div class="status-panel mono">
+          <div class="status-row"><span><span class="status-dot"></span>Status</span><span class="v">Open to opportunities</span></div>
+          <div class="status-row"><span>Experience</span><span class="v">6+ years</span></div>
+          <div class="status-row"><span>Field</span><span class="v">Aviation MRO / IT Ops</span></div>
+          <div class="status-row"><span>Based in</span><span class="v">Dubai, UAE</span></div>
+        </div>
       </div>
-      <div class="status-panel mono">
-        <div class="status-row"><span><span class="status-dot"></span>Status</span><span class="v">Open to opportunities</span></div>
-        <div class="status-row"><span>Experience</span><span class="v">7 years</span></div>
-        <div class="status-row"><span>Field</span><span class="v">Aviation MRO / IT Ops</span></div>
-        <div class="status-row"><span>Based in</span><span class="v">Dubai, UAE</span></div>
+      <div class="hero-photo-full">
+        <img src="assets/headshot.jpg" alt="Muhammad Ajmal, IT Support &amp; Operations Engineer">
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section class="about" id="about">
+    <h2><span class="eyebrow">About</span>Who I am</h2>
+    <p>
+      I'm an IT Support &amp; Operations Engineer with 6+ years across Level 1/2 support, infrastructure management,
+      and business application administration in aviation and enterprise environments. At Safran Aerosystems
+      Services I keep Microsoft 365, Oracle, SQL, and Hyperion running for 100+ end-users, manage LAN/WAN/VPN/firewall
+      infrastructure, and use Power BI and Grafana to give the team real-time visibility into system health.
+      CCNA and MCSE certified, currently working through CEH and AWS DevOps.
+    </p>
+    <div class="skills">
+      <span>Microsoft 365 &amp; Azure</span><span>LAN/WAN/VPN/Firewall</span><span>Oracle &amp; SQL</span>
+      <span>ServiceNow &amp; SCCM</span><span>Power BI &amp; Grafana</span><span>ITIL Incident Management</span>
+      <span>VB.NET &amp; Excel Macros</span><span>Asset Lifecycle Management</span><span>Windows &amp; Linux</span>
+      <span>Vendor &amp; Supplier Coordination</span><span>End-User Support</span>
     </div>
   </section>
 
-  <section class="about" id="about">
-    <h2><span class="mono">01 — About</span>Who I am</h2>
-    <p>
-      I work in IT support and operations inside an aviation maintenance environment, covering everything from
-      infrastructure and access systems to shop-floor visual management and asset lifecycle tracking. Alongside that,
-      I build small practical tools — dashboards, kiosk interfaces, internal apps — that make day-to-day operations
-      easier to see and manage.
-    </p>
-  </section>
-
   <section id="cv">
-    <h2><span class="mono">02 — Document</span>Curriculum Vitae</h2>
+    <h2><span class="eyebrow">Document</span>Curriculum Vitae</h2>
     <div class="cv-panel">
       <div class="cv-meta">
         <strong>Muhammad Ajmal — CV</strong>
@@ -384,25 +477,121 @@
   </section>
 
   <section id="projects">
-    <h2><span class="mono">03 — Log</span>Projects</h2>
+    <h2><span class="eyebrow">Log</span>Projects</h2>
+
+    <p class="subhead">Key Projects — Safran Aerosystems Services</p>
+
+    <div class="work-order">
+      <div class="wo-head">
+        <h3>IT Infrastructure Enhancement Initiative</h3>
+        <span class="wo-id mono">WO-01</span>
+      </div>
+      <p>Spearheaded upgrades to core LAN/WAN, VPN, and firewall infrastructure, strengthening network resilience
+      and cutting recurring connectivity incidents across the facility. Standardized monitoring and documentation
+      practices to give IT and engineering teams real-time visibility and faster root-cause diagnosis.</p>
+      <div class="tags">
+        <span>LAN/WAN</span><span>VPN &amp; Firewall</span><span>Monitoring</span><span>Aviation MRO</span>
+      </div>
+    </div>
+
+    <div class="work-order">
+      <div class="wo-head">
+        <h3>Shop-Floor Visual Management Screen Rearrangement</h3>
+        <span class="wo-id mono">WO-02</span>
+      </div>
+      <p>Redesigned and repositioned visual management display screens across the aviation maintenance shop floor,
+      improving technician access to work orders, KPIs, and safety information at a glance — and cutting
+      information clutter for faster shop-floor decisions.</p>
+      <div class="tags">
+        <span>Aviation MRO</span><span>Shop-floor UX</span><span>Work Orders</span><span>KPI Displays</span>
+      </div>
+    </div>
+
+    <div class="work-order">
+      <div class="wo-head">
+        <h3>WiFi Access Control Implementation</h3>
+        <span class="wo-id mono">WO-03</span>
+      </div>
+      <p>Rolled out structured WiFi access control policies, strengthening network security while enabling reliable
+      connectivity for staff, scanners, and shop-floor devices — improving coverage and stability for always-on
+      kiosks, handheld scanners, and mobile inventory tools.</p>
+      <div class="tags">
+        <span>Network Security</span><span>Wireless</span><span>Shop-floor Devices</span>
+      </div>
+    </div>
+
+    <div class="work-order">
+      <div class="wo-head">
+        <h3>Employee Onboarding &amp; Asset Lifecycle Management Program</h3>
+        <span class="wo-id mono">WO-04</span>
+      </div>
+      <p>Designed a structured IT onboarding procedure standardizing device provisioning, account setup, and access
+      configuration for new hires, plus a formal asset disposal procedure and a centralized inventory system giving
+      visibility from procurement through disposal.</p>
+      <div class="tags">
+        <span>Onboarding</span><span>Asset Lifecycle</span><span>Process Design</span>
+      </div>
+    </div>
+
+    <div class="work-order">
+      <div class="wo-head">
+        <h3>SD-WAN Infrastructure Migration</h3>
+        <span class="wo-id mono">WO-05</span>
+      </div>
+      <p>Partnered with IT management to lead the SD-WAN infrastructure migration on-site, coordinating vendors,
+      network teams, and business stakeholders end to end — from solution design through deployment — to replace
+      legacy WAN links with a more resilient, centrally managed network.</p>
+      <div class="tags">
+        <span>SD-WAN</span><span>Vendor Coordination</span><span>Network Migration</span>
+      </div>
+    </div>
+
+    <div class="work-order">
+      <div class="wo-head">
+        <h3>Vendor Sourcing &amp; Procurement Negotiation</h3>
+        <span class="wo-id mono">WO-06</span>
+      </div>
+      <!-- EDIT ME: swap in specifics — which suppliers/equipment, cost savings %, number of vendors compared, contract terms won -->
+      <p>Owned the supplier side of hardware and network equipment purchases: requesting quotes, comparing vendor
+      proposals on price and lead time, and negotiating terms before sign-off. Worked with vendors on delivery
+      schedules and after-sales support to keep procurement aligned with maintenance-floor deadlines.</p>
+      <div class="tags">
+        <span>Vendor Management</span><span>Procurement</span><span>Quote Negotiation</span>
+      </div>
+    </div>
+
+    <div class="work-order">
+      <div class="wo-head">
+        <h3>End-User IT Support &amp; Helpdesk Operations</h3>
+        <span class="wo-id mono">WO-07</span>
+      </div>
+      <p>Ran day-to-day Level 1/2 support for 100+ end-users, triaging and resolving tickets through ServiceNow with
+      an 85% first-call resolution rate and 90%+ SLA compliance. Covered account provisioning, hardware/software
+      break-fix, and user training so staff spent less time stuck on IT issues.</p>
+      <div class="tags">
+        <span>ServiceNow</span><span>Level 1/2 Support</span><span>SLA Management</span><span>End-User Training</span>
+      </div>
+    </div>
+
+    <p class="subhead" style="margin-top: 8px;">Personal Builds</p>
 
     <div class="work-order">
       <div class="wo-head">
         <h3>SME Scan Station</h3>
-        <span class="wo-id mono">WO-01</span>
+        <span class="wo-id mono">WO-08</span>
       </div>
-      <p>An aviation maintenance kiosk system covering technician badge scanning, part tag scanning, and document
+      <p>An aviation maintenance kiosk concept covering technician badge scanning, part tag scanning, and document
       scanning workflows. Designed the multi-step kiosk UI end to end and speced the physical workstation — a
       rolling stand integrating a scanner and all-in-one PC with articulating arms for shop-floor use.</p>
       <div class="tags">
-        <span>UI/UX</span><span>SVG &amp; HTML</span><span>Hardware integration</span><span>Aviation MRO</span>
+        <span>UI/UX</span><span>SVG &amp; HTML</span><span>Hardware integration</span>
       </div>
     </div>
 
     <div class="work-order">
       <div class="wo-head">
         <h3>Employee Asset Management System</h3>
-        <span class="wo-id mono">WO-02</span>
+        <span class="wo-id mono">WO-09</span>
       </div>
       <p>An internal tool for tracking company asset assignment, lifecycle, and disposal, built for local network
       deployment. Currently a beginner-scope build with room to grow into a full inventory system.</p>
@@ -414,7 +603,7 @@
     <div class="work-order">
       <div class="wo-head">
         <h3>Device Inventory Dashboard</h3>
-        <span class="wo-id mono">WO-03</span>
+        <span class="wo-id mono">WO-10</span>
       </div>
       <p>An interactive dashboard for device inventory management — Excel upload, KPI cards, and charts, with
       built-in anomaly detection to flag irregular records at a glance.</p>
@@ -425,26 +614,38 @@
 
   </section>
 
-  <section id="photos">
-    <h2><span class="mono">04 — Frames</span>Photos</h2>
-    <div class="contact-sheet">
-      <!-- EDIT ME: replace each empty frame with a real image, e.g.
-           <div class="frame"><img src="assets/photo-01.jpg" alt="Describe the photo"><span class="cap mono">photo-01</span></div> -->
-      <div class="frame"><img src="assets/headshot.jpg" alt="Portrait of Muhammad Ajmal"><span class="cap mono">headshot</span></div>
-      <div class="frame empty mono">photo-02.jpg</div>
-      <div class="frame empty mono">photo-03.jpg</div>
-      <div class="frame empty mono">photo-04.jpg</div>
-      <div class="frame empty mono">photo-05.jpg</div>
-      <div class="frame empty mono">photo-06.jpg</div>
+  <section id="certifications">
+    <h2><span class="eyebrow">Credentials</span>Certifications</h2>
+    <ul class="cert-grid">
+      <li>CCNA — Cisco Certified Network Associate <span class="status">Certified</span></li>
+      <li>MCSE — Microsoft Certified Solutions Expert <span class="status">Certified</span></li>
+      <li>Google IT Support Professional <span class="status">Certified</span></li>
+      <li>CompTIA A+ <span class="status">Certified</span></li>
+      <li>ServiceNow | SCCM | LanDesk <span class="status">Certified</span></li>
+      <li>Microsoft Azure Fundamentals <span class="status">Certified</span></li>
+      <li>CEH — Certified Ethical Hacker <span class="status pending">In Progress</span></li>
+      <li>AWS DevOps <span class="status pending">In Progress</span></li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2><span class="eyebrow">Background</span>Education</h2>
+    <div class="edu-panel">
+      <div>
+        <strong>Bachelor of Technology — Computer Science &amp; Engineering</strong>
+        <span class="edu-meta">Visvesvaraya Technological University (VTU), Karnataka, India</span>
+      </div>
+      <span class="edu-years mono">2013 – 2018</span>
     </div>
+    <p class="languages">Languages: <span>English</span> (Professional) · <span>Hindi</span> (Fluent) · <span>Malayalam</span> (Native)</p>
   </section>
 
   <section id="contact">
-    <h2><span class="mono">05 — Contact</span>Get in touch</h2>
+    <h2><span class="eyebrow">Contact</span>Get in touch</h2>
     <ul class="contact-list">
       <li><span class="label">Email</span><a href="mailto:ajmalpm44@hotmail.com" class="mono">ajmalpm44@hotmail.com</a></li>
       <li><span class="label">Phone</span><a href="tel:+971568532203" class="mono">+971 56 853 2203</a></li>
-      <li><span class="label">LinkedIn</span><a href="https://linkedin.com/in/your-handle" class="mono" target="_blank" rel="noopener">linkedin.com/in/your-handle</a></li>
+      <li><span class="label">LinkedIn</span><a href="https://linkedin.com/in/muhammad-ajmal-pm-75685a136" class="mono" target="_blank" rel="noopener">linkedin.com/in/your-handle</a></li>
     </ul>
   </section>
 
